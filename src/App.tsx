@@ -9,6 +9,7 @@ import ContactCard from './components/ContactCard'
 import SocialLinks from './components/SocialLinks'
 import './index.css'
 import profile from './assets/profile.jpg'
+import profile2 from './assets/profile2.jpg'
 
 function App() {
   const [dark, setDark] = useState<boolean>(() => {
@@ -68,8 +69,8 @@ function App() {
 
             <section className="card card--span-2 card--large">
               <img
-                src={profile}
-                alt="profile"
+                src={dark ? profile : profile2}
+                alt={dark ? 'profile (dark mode)' : 'profile (light mode)'}
                 className="project-img profile-square"
               />
             </section>
