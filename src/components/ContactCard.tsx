@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function ContactCard() {
-  const email = 'hello@example.com'
+  const email = 'mariusjamess26@gmail.com'
   const [copied, setCopied] = useState(false)
 
   const copy = async () => {
@@ -27,8 +27,9 @@ export default function ContactCard() {
       <h3 className="font-medium">Have a project in mind?</h3>
       <p className="text-[var(--muted)] mt-2">Let's build something together.</p>
       <div className="mt-3 flex gap-2">
-        <button onClick={copy} className="btn btn-primary">Copy email</button>
-        {copied && <span className="text-[var(--muted)]">Copied!</span>}
+        <button onClick={copy} className="btn btn-primary">
+          {copied ? 'Copied!' : 'Copy email'}
+        </button>
       </div>
     </div>
   )
