@@ -494,14 +494,20 @@ button, .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  padding: 0.4rem;
+  width: 104px;
+  height: 104px;
+  padding: 0.7rem;
   border-radius: 0.75rem;
-  /* background: rgba(0,0,0,0.12); */
+  background: transparent; /* removed background per request */
   color: var(--text);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
-.stack-item svg { width: 28px; height: 28px; display: block; }
+.stack-item svg { width: 56px !important; height: 56px !important; display: block; }
+
+.stack-item:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 14px 36px rgba(2,6,23,0.38);
+}
 
 .stack-carousel:hover .stack-track { animation-play-state: paused; }
 
