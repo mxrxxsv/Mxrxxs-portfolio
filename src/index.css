@@ -506,7 +506,7 @@ button, .btn {
 
 .stack-item:hover {
   transform: translateY(-6px) scale(1.06);
-  box-shadow: 0 14px 36px rgba(2,6,23,0.38);
+  box-shadow: 0 2px -2px rgba(2,6,23,0.38);
 }
 
 .stack-carousel:hover .stack-track { animation-play-state: paused; }
