@@ -56,10 +56,10 @@ function Icon({ name }: { name: string }) {
 
 export default function SocialLinks() {
     return (
-        <div>
-            <h3 className="font-medium">Connect</h3>
+        <div className="social-links">
+            <h3 className="social-title">Connect</h3>
             <div>
-                <div className="mt-3 grid grid-cols-3 gap-3">
+                <div className="social-grid">
                     {socials.map((s) => (
                         <a
                             key={s.name}

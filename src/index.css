@@ -246,7 +246,8 @@ button, .btn {
   color: var(--text);
   transition: box-shadow 180ms ease, transform 180ms ease;
 }
-.social-btn:hover { box-shadow: 0 12px 28px rgba(0,0,0,0.6); transform: translateY(-3px); }
+.social-btn:hover { box-shadow: 0 6px 18px rgba(12,12,12,0.08); transform: translateY(-3px); }
+.dark .social-btn:hover { box-shadow: 0 12px 28px rgba(0,0,0,0.6); }
 .social-btn svg { display: block; color: var(--text); }
 
 
@@ -300,5 +301,21 @@ button, .btn {
 @keyframes stack-scroll {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
+}
+
+/* SocialLinks component (plain-CSS equivalents of Tailwind utilities used)
+   - .social-links: component root
+   - .social-title: font-medium
+   - .social-grid: mt-3 + grid grid-cols-3 gap-3
+*/
+.social-links .social-title {
+  font-weight: 500;
+}
+
+.social-links .social-grid {
+  margin-top: 0.75rem; /* mt-3 */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* grid-cols-3 */
+  gap: 0.75rem; /* gap-3 */
 }
 
