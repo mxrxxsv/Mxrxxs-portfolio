@@ -8,7 +8,7 @@ const socials: { name: string; href: string }[] = [
 ]
 
 function Icon({ name }: { name: string }) {
-    const common = { width: 24, height: 24, fill: 'none', stroke: 'currentColor', strokeWidth: 1.6 }
+    const common = { width: 28, height: 28, fill: 'none', stroke: 'currentColor', strokeWidth: 1.6 }
     switch (name) {
         case 'Twitter':
             return (
@@ -56,22 +56,35 @@ function Icon({ name }: { name: string }) {
 
 export default function SocialLinks() {
     return (
-        <div className="social-links">
-            <h3 className="social-title">Connect</h3>
-            <div>
-                <div className="social-grid">
-                    {socials.map((s) => (
-                        <a
-                            key={s.name}
-                            href={s.href}
-                            aria-label={s.name}
-                            className="social-btn"
-                            rel="noopener noreferrer"
-                        >
-                            <Icon name={s.name} />
-                        </a>
-                    ))}
-                </div>
+        <div className="social-links" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <style>{`
+                /* social tile variables (fall back to sensible values) */
+                :root { --social-border: rgba(255,255,255,0.06); --social-border-hover: rgba(255,255,255,0.14); }
+                @media (prefers-color-scheme: light) {
+                    :root { --social-border: rgba(15,23,42,0.20); --social-border-hover: rgba(15,23,42,0.28); }
+                }
+
+                .social-title { font-size: 0.95rem; margin: 0 0 6px 0; color: var(--muted-text, #94a3b8); }
+                .social-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; justify-items: center; }
+                /* Transparent mini tiles so icons sit in the bento card without a filled background */
+                .social-btn { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 12px; background: transparent; color: inherit; text-decoration: none; border: 1px solid var(--social-border); box-shadow: none; transition: transform .14s ease, border-color .14s ease; }
+                .social-btn:focus { outline: 2px solid rgba(0,0,0,0.06); outline-offset: 4px; }
+                .social-btn:hover { transform: translateY(-4px); border-color: var(--social-border-hover); }
+                .social-btn svg { width: 20px; height: 20px; }
+            `}</style>
+
+            <div className="social-grid" aria-label="social links">
+                {socials.map((s) => (
+                    <a
+                        key={s.name}
+                        href={s.href}
+                        aria-label={s.name}
+                        className="social-btn"
+                        rel="noopener noreferrer"
+                    >
+                        <Icon name={s.name} />
+                    </a>
+                ))}
             </div>
         </div>
     )
