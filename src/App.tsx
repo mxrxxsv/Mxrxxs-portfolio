@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import IntroCard from './components/IntroCard'
 import AboutCard from './components/AboutCard'
 import ProjectCard from './components/ProjectCard'
-// ResourceCard removed — replaced by SocialLinks in the right rail
-// SubscribeCard removed per request
 import StackCard from './components/StackCard'
 import ContactCard from './components/ContactCard'
 import SocialLinks from './components/SocialLinks'
@@ -47,13 +45,13 @@ function App() {
                   title={dark ? 'Switch to light' : 'Switch to dark'}
                 >
                   {dark ? (
-                    /* Sun icon (indicates light mode) */
+                   
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                       <circle cx="12" cy="12" r="4" />
                       <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
                     </svg>
                   ) : (
-                    /* Moon icon (indicates dark mode) */
+                   
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                       <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
                     </svg>
@@ -91,8 +89,6 @@ function App() {
               <SocialLinks />
             </section>
 
-            {/* Subscribe card removed */}
-
             <section className="card">
               <StackCard />
             </section>
@@ -101,7 +97,6 @@ function App() {
               <ContactCard />
             </section>
 
-            {/* Social links moved to the top-right rail; removed duplicate here */}
           </main>
         </div>
       </div>
