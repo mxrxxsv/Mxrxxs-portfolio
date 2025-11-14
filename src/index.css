@@ -445,6 +445,40 @@ button, .btn {
   display: block;
 }
 
+/* Profile tile: small centered square avatar used in bento layout */
+.profile-tile {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px rgba(12,12,12,0.08);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+@media (min-width: 640px) {
+  .profile-tile { width: 112px; height: 112px; }
+}
+
+@media (min-width: 1024px) {
+  .profile-tile { width: 120px; height: 120px; }
+}
+
+/* Widget card - small media tile to fill space near About */
+.widget-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.widget-gif {
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  display: block;
+}
+
 /* Stack carousel styles */
 .stack-carousel {
   width: 100%;
