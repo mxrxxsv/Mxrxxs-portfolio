@@ -8,6 +8,8 @@ import SocialLinks from './components/SocialLinks'
 import './index.css'
 import profile from './assets/profile.jpg'
 import profile2 from './assets/profile2.jpg'
+import fixit from './assets/FixIT.png'
+import wheresmycoffee from './assets/Where’s My Coffee.png'
 
 function App() {
   const [dark, setDark] = useState<boolean>(() => {
@@ -32,7 +34,7 @@ function App() {
   const toggleDark = () => setDark((d) => !d)
 
   return (
-    <div className="min-h-screen py-10 px-6 md:px-12 lg:px-20">
+    <div className="min-h-screen py-6 px-4 md:px-6 lg:px-8">
       <div className="max-w-[1200px] mx-auto">
         <div className="canvas">
           <header className="site-header">
@@ -78,11 +80,19 @@ function App() {
             </section>
 
             <section className="card card--span-2 card--large">
-              <ProjectCard title="Project One" />
+              <ProjectCard 
+                title={fixit} 
+                titleCard="FixIT" 
+                description='Developed a full-stack web application that connects clients with skilled workers across various service categories such as plumbing, electrical work, carpentry, cleaning, and construction. '
+                />
             </section>
 
             <section className="card card--span-2 card--large">
-              <ProjectCard title="Project Two" />
+              <ProjectCard 
+                title={wheresmycoffee} 
+                titleCard="Where's My Coffee"
+                description='Mobile app built with Ionic Framework that helps users discover local coffee shops through interactive maps and curated listings. Integrated location services, user reviews, and dynamic coffee shop details for a smooth and intuitive user experience.'
+                />
             </section>
 
             <section className="card card--span-2">
