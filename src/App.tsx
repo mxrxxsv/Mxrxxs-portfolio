@@ -79,7 +79,6 @@ function App() {
               <AboutCard />
             </section>
 
-            {/* Widget GIF: drop a file at `public/widget.gif` and it will appear here */}
             <section className="card widget-card">
               <img src="https://assets-v2.lottiefiles.com/a/4e784ad0-f128-11ee-bbb7-b76f60dbd4ce/shoJtcsKZ0.gif" alt="Widget" className="widget-gif" />
             </section>
