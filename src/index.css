@@ -113,15 +113,30 @@
 
 /* Mobile layout: two-column bento so profile (left) and widgets (right) sit side-by-side */
 @media (max-width: 639px) {
-  .bento-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+  /* two equal columns on phones, keep gap in a variable for calculations */
+  :root { --mobile-gap: 0.75rem; }
+  .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--mobile-gap);
+    box-sizing: border-box;
+    /* column width available to each column (including its padding) */
+    --col-w: calc((100% - var(--mobile-gap)) / 2);
+  }
+
   /* Make wide cards span both columns on phones */
   .card--span-2 { grid-column: span 2 / span 2; }
 
-  /* Allow compact cards to size to content on mobile */
-  .card-compact { height: auto; }
+  /* Allow compact cards to size to content on mobile and use consistent padding */
+  .card-compact { height: auto; padding: 0.5rem; box-sizing: border-box; }
 
-  /* Profile: span two rows so it becomes a tall rectangle on the left */
-  .profile-card { grid-row: span 2; padding: 0.5rem; }
+  /* Profile: span two rows so it becomes a tall rectangle on the left.
+     Set min-height to equal the combined height of two stacked widget squares. */
+  .profile-card {
+    grid-row: span 2;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    min-height: calc((var(--col-w) * 2) + var(--mobile-gap));
+  }
 
   /* Hide desktop widget instances on mobile (we show `.mobile-only`) */
   .widget-card:not(.mobile-only) { display: none; }
@@ -132,34 +147,33 @@
     grid-row: span 2;
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.75rem;
     align-items: stretch;
-    justify-content: flex-start; 
-    padding: 0.1rem;
+    justify-content: flex-start; /* top align so widgets sit at top-right */
+    padding: 0.5rem;
+    box-sizing: border-box;
   }
 
+  /* Each widget is a perfect square sized to the column width */
   .widget-box {
     width: 100%;
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 0.75rem;
     box-shadow: var(--card-shadow);
     background: var(--panel);
     border: 1px solid rgba(0,0,0,0.04);
+    box-sizing: border-box;
   }
 
-  .widget-box .widget-gif {
+  .widget-box .widget-gif,
+  .profile-card .project-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 0.75rem;
   }
-
-   .profile-card {     
-    min-height: 285px;      
-    padding: 0.5rem;
-  }
-
 }
 
 /* Hide mobile-only widgets on larger screens */
