@@ -8,8 +8,8 @@ import SocialLinks from './components/SocialLinks'
 import './index.css'
 import profile from './assets/profile.jpg'
 import profile2 from './assets/profile2.jpg'
-import fixit from './assets/FixIT.png'
-import wheresmycoffee from './assets/Where’s My Coffee.png'
+import fixit from './assets/Fixit proj.png'
+import wheresmycoffee from './assets/WheresMyCoffee.png'
 
 function App() {
   const [dark, setDark] = useState<boolean>(() => {

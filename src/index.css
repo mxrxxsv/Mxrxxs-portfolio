@@ -226,7 +226,7 @@
   height: 220px; /* fixed frame so cards align */
   border-radius: 0.75rem;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02));
+  /* background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02)); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,7 +265,7 @@
   height: 220px;
   border-radius: 0.75rem;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02));
+  /* background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02)); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,7 +291,7 @@
   right: 0;
   bottom: 0;
   height: 30%;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,6,23,0.18) 100%);
+  /* background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,6,23,0.18) 100%); */
   pointer-events: none;
 }
 
@@ -386,10 +386,10 @@
 }
 
 /* Slightly reduce the hero overlay intensity in light mode */
-.project-hero::after { background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,6,23,0.2) 100%); }
+/* .project-hero::after { background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,6,23,0.2) 100%); } */
 
 @media (min-width: 1024px) {
-  .project-hero { height: 320px; }
+  .project-hero { height: 245px; }
   .card--large { grid-row: span 2; }
 }
 
