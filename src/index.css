@@ -110,6 +110,62 @@
 @media (min-width: 640px) {
   .bento-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Mobile layout: two-column bento so profile (left) and widgets (right) sit side-by-side */
+@media (max-width: 639px) {
+  .bento-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+  /* Make wide cards span both columns on phones */
+  .card--span-2 { grid-column: span 2 / span 2; }
+
+  /* Allow compact cards to size to content on mobile */
+  .card-compact { height: auto; }
+
+  /* Profile: span two rows so it becomes a tall rectangle on the left */
+  .profile-card { grid-row: span 2; padding: 0.5rem; }
+
+  /* Hide desktop widget instances on mobile (we show `.mobile-only`) */
+  .widget-card:not(.mobile-only) { display: none; }
+
+  /* Mobile stacked widget container on the right */
+  .mobile-only { display: block; }
+  .widget-stack {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    align-items: stretch;
+    justify-content: flex-start; 
+    padding: 0.1rem;
+  }
+
+  .widget-box {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+    background: var(--panel);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .widget-box .widget-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+   .profile-card {     
+    min-height: 285px;      
+    padding: 0.5rem;
+  }
+
+}
+
+/* Hide mobile-only widgets on larger screens */
+@media (min-width: 640px) {
+  .mobile-only { display: none; }
+}
 @media (min-width: 1024px) {
   .bento-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .card--span-2 { grid-column: span 2 / span 2; }

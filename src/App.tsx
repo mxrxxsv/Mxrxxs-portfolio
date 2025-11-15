@@ -67,14 +67,24 @@ function App() {
               <IntroCard />
             </section>
 
-            <section className="card card-compact">
+            <section className="card card-compact profile-card">
               <img
                 src={dark ? profile : profile2}
                 alt={dark ? 'profile (dark mode)' : 'profile (light mode)'}
-                className="project-img profile-square profile-tile"
+                className="project-img profile-tile"
               />
             </section>
 
+            {/* Mobile-only stacked widgets (appear to the right of profile on phones) */}
+            <section className="widget-stack mobile-only">
+              <div className="widget-box">
+                <img src="https://assets-v2.lottiefiles.com/a/4e784ad0-f128-11ee-bbb7-b76f60dbd4ce/shoJtcsKZ0.gif" alt="Widget top" className="widget-gif" />
+              </div>
+              <div className="widget-box">
+                <img src="https://assets-v2.lottiefiles.com/a/4e784ad0-f128-11ee-bbb7-b76f60dbd4ce/shoJtcsKZ0.gif" alt="Widget top" className="widget-gif" />
+              </div>
+            </section>
+         
             <section className="card card--span-2">
               <AboutCard />
             </section>
