@@ -81,7 +81,7 @@ function App() {
                 <img src="https://assets-v2.lottiefiles.com/a/4e784ad0-f128-11ee-bbb7-b76f60dbd4ce/shoJtcsKZ0.gif" alt="Widget top" className="widget-gif" />
               </div>
               <div className="widget-box">
-                <img src="https://assets-v2.lottiefiles.com/a/4e784ad0-f128-11ee-bbb7-b76f60dbd4ce/shoJtcsKZ0.gif" alt="Widget top" className="widget-gif" />
+                <img src="https://i.pinimg.com/originals/d3/81/2e/d3812ec68e76e334b4ab1cb8884169a7.gif" alt="Widget top" className="widget-gif" />
               </div>
             </section>
 
