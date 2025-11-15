@@ -1,10 +1,10 @@
 const socials: { name: string; href: string }[] = [
-    { name: 'Twitter', href: '#' },
-    { name: 'GitHub', href: '#' },
-    { name: 'Instagram', href: '#' },
-    { name: 'LinkedIn', href: '#' },
-    { name: 'Behance', href: '#' },
-    { name: 'Email', href: '#' }
+    { name: 'Twitter', href: 'https://x.com/mxrxxsx' },
+    { name: 'GitHub', href: 'https://github.com/mxrxxsv' },
+    { name: 'Instagram', href: 'https://www.instagram.com/mxrxxs_x/' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/james-marius-santos-584707279' },
+    { name: 'Facebook', href: 'https://www.facebook.com/jamesmarius.26/' },
+    { name: 'Email', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=mariusjamess26@gmail.com' }
 ]
 
 function Icon({ name }: { name: string }) {
@@ -36,10 +36,10 @@ function Icon({ name }: { name: string }) {
                     <path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5s.88 2 1.98 2S7 6.6 7 5.5 6.08 3.5 4.98 3.5zM3.5 8.5H6.5V20.5H3.5zM9.5 8.5H12.3v1.6h.1c.4-.8 1.6-1.6 3.3-1.6 3.5 0 4.2 2.3 4.2 5.3V20.5H18.3v-5.5c0-1.3 0-3-1.8-3-1.8 0-2 1.4-2 2.9V20.5H9.5z" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             )
-        case 'Behance':
+        case 'Facebook':
             return (
                 <svg {...common} viewBox="0 0 24 24" aria-hidden>
-                    <path d="M3 7h6v1H3zM3 11h6v1H3zM3 15h6v1H3zM11 7h6v1h-6zM11 11h2v1h-2zM11 15h6v1h-6z" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07C1.86 17 5.92 21 10.66 21v-6.62H8.12V12.1h2.54V9.8c0-2.5 1.5-3.88 3.78-3.88 1.1 0 2.25.2 2.25.2v2.47h-1.26c-1.24 0-1.62.77-1.62 1.56v1.87h2.75l-.44 2.28h-2.31V21c4.74 0 8.8-4 8.8-8.93z" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             )
         case 'Email':
@@ -65,12 +65,26 @@ export default function SocialLinks() {
                 }
 
                 .social-title { font-size: 0.95rem; margin: 0 0 6px 0; color: var(--muted-text, #94a3b8); }
-                .social-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; justify-items: center; }
-                /* Transparent mini tiles so icons sit in the bento card without a filled background */
-                .social-btn { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 12px; background: transparent; color: inherit; text-decoration: none; border: 1px solid var(--social-border); box-shadow: none; transition: transform .14s ease, border-color .14s ease; }
+                .social-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; justify-items: center; }
+                /* Larger social tiles so icons are more prominent */
+                .social-btn { display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 14px; background: transparent; color: inherit; text-decoration: none; border: 1px solid var(--social-border); box-shadow: none; transition: transform .14s ease, border-color .14s ease; }
                 .social-btn:focus { outline: 2px solid rgba(0,0,0,0.06); outline-offset: 4px; }
                 .social-btn:hover { transform: translateY(-4px); border-color: var(--social-border-hover); }
-                .social-btn svg { width: 20px; height: 20px; }
+                /* Ensure borders are visible in explicit light mode (when html does not have .dark) */
+                html:not(.dark) .social-btn {
+                    border-color: rgba(15,23,42,0.22) !important;
+                    background: rgba(15,23,42,0.02);
+                }
+                html:not(.dark) .social-btn:hover {
+                    border-color: rgba(15,23,42,0.36) !important;
+                }
+                                .social-btn svg { width: 28px; height: 28px; }
+                                /* make icons even larger on wide screens */
+                                @media (min-width: 1024px) {
+                                    .social-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+                                    .social-btn { width: 80px; height: 80px; }
+                                    .social-btn svg { width: 32px; height: 32px; }
+                                }
             `}</style>
 
             <div className="social-grid" aria-label="social links">
@@ -81,6 +95,7 @@ export default function SocialLinks() {
                         aria-label={s.name}
                         className="social-btn"
                         rel="noopener noreferrer"
+                        target="_blank" 
                     >
                         <Icon name={s.name} />
                     </a>
