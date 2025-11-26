@@ -14,7 +14,7 @@ export default function AboutCard({ defaultResume }: AboutCardProps) {
       <p className="mt-3 text-[var(--muted)]">Passionate and detail-oriented developer specializing in database systems, AI-driven analytics, and modern web development. Skilled in crafting intuitive UI/UX and building secure data driven applications. Continuously learning and adapting.</p>
 
       <div className="mt-4">
-        <a href={resumePath} target="_blank" rel="noopener noreferrer" className="btn btn-ghost cv-btn">View CV -</a>
+        <a href={resumePath} target="_blank" rel="noopener noreferrer" className="btn btn-ghost cv-btn">View CV</a>
       </div>
     </div>
   )
