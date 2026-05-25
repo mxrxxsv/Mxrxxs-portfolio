@@ -8,7 +8,7 @@ import SocialLinks from './components/SocialLinks'
 import './index.css'
 import profile from './assets/profile.jpg'
 import profile2 from './assets/profile2.jpg'
-import fixit from './assets/Fixit proj.png'
+import fixit from './assets/Fixit.png'
 import wheresmycoffee from './assets/WheresMyCoffee.png'
 
 function App() {

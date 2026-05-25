@@ -1,7 +1,6 @@
-import resume from './../assets/Resume_JamesMariuSantos.pdf'
+import resume from './../assets/James Marius Santos CV.pdf'
 
 type AboutCardProps = {
-  /** Path or URL to the resume PDF that will be opened in a new tab. E.g. '/resume.pdf' */
   defaultResume?: string
 }
 
